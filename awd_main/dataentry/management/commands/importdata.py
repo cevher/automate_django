@@ -26,6 +26,7 @@ class Command(BaseCommand):
                 continue #model not found in this app continue to search in next app
         if not model:
             raise CommandError(f'Model "{model} not found imn any app')
+        
         with open(file_path, 'r') as file:
             reader = csv.DictReader(file)
             for row in reader:
